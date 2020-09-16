@@ -5,7 +5,7 @@ def read_csv(csv_file_path):
     """
 
     import csv
-    from typing import List 
+    from typing import List
 
     matrix: List = []    
 
@@ -14,7 +14,15 @@ def read_csv(csv_file_path):
         csv_reader = csv.reader(csvfile) #create a csv_reader object
 
         for line in csv_reader:
-            matrix += [line]
+            c_line: List = []
+            
+            for val in line:
+                if val.isnumeric():
+                    c_line += [int(val)]
+                else:
+                    c_line += [val]
+
+            matrix += [c_line]
     
     [print(i) for i in matrix]
     return matrix
