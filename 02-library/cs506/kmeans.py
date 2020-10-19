@@ -2,17 +2,16 @@ from collections import defaultdict
 from math import inf
 import random
 import csv
+import numpy as np
 
 
 def point_avg(points):
-    """
-    Accepts a list of points, each with the same number of dimensions.
-    (points can have more dimensions than 2)
-    
-    Returns a new point which is the center of all the points.
-    """
-    raise NotImplementedError()
 
+    """
+    perform the element-wise addition of values across all of the
+    #point-vectors and then divide by the number of points in the list.
+    """
+    return np.add(points) / len(points)
 
 def update_centers(dataset, assignments):
     """

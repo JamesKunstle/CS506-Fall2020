@@ -2,12 +2,19 @@ import math
 from typing import List
 
 def euclidean_dist(x, y):
+<<<<<<< HEAD
     if (len(x) == 0) or (len(y) == 0) or (len(x) != len(y)):
         return 0
     dist: float = 0
     for x_i, y_i in zip(x, y):
         dist += (x_i - y_i) ** 2
     return math.sqrt(dist)
+=======
+    res = 0
+    for i in range(len(x)):
+        res += (x[i] - y[i])**2
+    return res**(1/2)
+>>>>>>> a19297dd00e822f88b59df77a271525a8e9e3836
 
 def manhattan_dist(x, y):
     if (len(x) == 0) or (len(y) == 0) or (len(x) != len(y)):
